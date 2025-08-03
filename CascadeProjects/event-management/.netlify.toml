@@ -1,0 +1,16 @@
+[build]
+  base = "frontend"
+  publish = "dist"
+  command = "npm run build"
+
+[context.production.environment]
+  NODE_ENV = "production"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build.environment]
+  REACT_APP_API_URL = "https://api.your-domain.com"  # Update with your backend URL
+  REACT_APP_STRIPE_PUBLIC_KEY = "${REACT_APP_STRIPE_PUBLIC_KEY}"  # Set in Netlify UI
