@@ -405,21 +405,31 @@
         let db;
 
         async function initializeFirebase() {
-            try {
-                const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
-                const app = initializeApp(firebaseConfig);
-                db = getFirestore(app);
-                const auth = getAuth(app);
-                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                    await signInWithCustomToken(auth, __initial_auth_token);
-                } else {
-                    await signInAnonymously(auth);
-                }
-                listenForScores();
-            } catch (error) {
-                console.error("Firebase initialization failed:", error);
-            }
-        }
+    try {
+        // PASTE YOUR FIREBASE CONFIG OBJECT HERE
+        const firebaseConfig = {
+          apiKey: "AIzaSy...",
+          authDomain: "your-project-id.firebaseapp.com",
+          projectId: "your-project-id",
+          storageBucket: "your-project-id.appspot.com",
+          messagingSenderId: "...",
+          appId: "1:..."
+        };
+
+        const app = initializeApp(firebaseConfig);
+        db = getFirestore(app);
+        const auth = getAuth(app);
+        await signInAnonymously(auth); // Simplified authentication
+        listenForScores();
+    } catch (error) {
+        console.error("Firebase initialization failed:", error);
+    }
+}
+// ... inside submitQuiz() and listenForScores() functions ...
+// Change this line:
+const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+// To this:
+const appId = 'mrii-workshop'; // Use a simple, consistent ID
 
         function createAccordion(containerId, items) {
             const container = document.getElementById(containerId);
