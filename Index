@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultative Selling Masterclass Hub for MRII Sales Professionals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative; 
+            width: 100%; 
+            max-width: 600px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) { 
+            .chart-container { 
+                height: 350px; 
+            } 
+        }
+        .flow-step {
+            position: relative;
+            padding-left: 3rem; 
+            padding-bottom: 2rem;
+        }
+        .flow-step:not(:last-child)::before {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 40px;
+            width: 2px;
+            height: 100%;
+            background-color: #CBD5E0;
+        }
+        .flow-icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            border: 4px solid #FFFFFF;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        .example-block {
+            @apply mt-3 pt-3 border-t border-slate-200;
+        }
+        .example-title {
+            @apply font-semibold text-sky-700;
+        }
+        .quiz-option:hover {
+            background-color: #f0f9ff; /* sky-50 */
+        }
+        .quiz-option input:checked + label {
+            border-color: #0ea5e9; /* sky-500 */
+            background-color: #f0f9ff; /* sky-50 */
+            font-weight: 600;
+        }
+        #submit-quiz:disabled {
+            background-color: #94a3b8; /* slate-400 */
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+    <header class="bg-white p-6 text-center sticky top-0 z-50 shadow-md">
+        <h1 class="text-4xl font-bold text-teal-600">The Modern Consultative Selling Playbook for MRII Sales Professionals</h1>
+        <p class="text-lg text-slate-500 mt-2">A 2-Day Virtual Masterclass Hub</p>
+        <nav class="mt-4">
+             <a href="#intro" class="text-slate-600 hover:text-teal-600 px-3 py-2">Intro</a>
+             <a href="#day1" class="text-slate-600 hover:text-teal-600 px-3 py-2">Day 1</a>
+             <a href="#day2" class="text-slate-600 hover:text-teal-600 px-3 py-2">Day 2</a>
+             <a href="#roleplay" class="text-slate-600 hover:text-teal-600 px-3 py-2">Activities</a>
+             <a href="#coaching" class="text-slate-600 hover:text-teal-600 px-3 py-2">Coaching</a>
+             <a href="#quiz" class="text-slate-600 hover:text-teal-600 px-3 py-2">Quiz</a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-8">
+
+        <section id="intro" class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4 text-orange-500">Welcome to the Masterclass</h2>
+            <p class="max-w-3xl mx-auto text-slate-600 text-lg mb-8">This hub contains all the materials for our intensive two-day workshop. We will move from strategic frameworks to deep, consultative client engagement, equipping you with a multi-layered methodology to elevate your sales process from a simple transaction to a strategic partnership.</p>
+            
+            <div class="bg-white p-8 rounded-lg shadow-lg border border-slate-200 text-left max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold mb-4 text-teal-600">Building on Our Foundation: A Strategic Selling Refresher</h3>
+                <p class="text-slate-600 mb-6">In our previous session, we mastered the Miller-Heiman Strategic Selling framework. This gave us a powerful lens to analyze complex deals. As we move into Conceptual and Consultative selling, we will build directly upon these core principles:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold text-slate-800">The Blue Sheet</h4>
+                        <p class="text-slate-600">Our roadmap for analyzing the political and strategic landscape of any deal.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800">The Four Buying Influences</h4>
+                        <p class="text-slate-600">Identifying the **Economic, User, Technical, and Coach** roles to understand who holds the power and what they value.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800">Win-Results</h4>
+                        <p class="text-slate-600">Focusing on the tangible, measurable outcomes that constitute a "win" for each buyer, not just for us.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800">Red Flags</h4>
+                        <p class="text-slate-600">Proactively identifying and mitigating the risks that can derail a sale.</p>
+                    </div>
+                </div>
+                <p class="text-slate-600 mt-6 italic">This workshop will teach you how to take this strategic analysis and use it to craft a compelling, consultative narrative that resonates with each buyer on a deeper level.</p>
+            </div>
+        </section>
+
+        <section id="day1" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-orange-500">Day 1: Mastering Conceptual Selling</h2>
+            <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200 mb-8">
+                 <h3 class="text-2xl font-bold mb-4 text-teal-600 text-center">From Pain to Concept</h3>
+                <p class="text-slate-500 mb-6 max-w-4xl mx-auto text-center">Customers don't buy products; they buy solutions to their problems. Conceptual selling is the art of moving beyond features and benefits to sell the **core concept** the client is truly invested in. This requires diagnosing pain on three levels to understand their true motivation.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <div class="bg-slate-100 p-4 rounded-lg">
+                        <h4 class="text-xl font-bold text-pink-500 mb-2">1. Surface-Level Pain</h4>
+                        <p class="text-slate-600">The initial technical or logistical problem the client mentions. It's the symptom, not the disease.</p>
+                        <p class="mt-2 text-sm text-slate-400 italic">"Our wastewater discharge is non-compliant."</p>
+                    </div>
+                    <div class="bg-slate-100 p-4 rounded-lg">
+                        <h4 class="text-xl font-bold text-pink-500 mb-2">2. Business Pain</h4>
+                        <p class="text-slate-600">The tangible, financial, or operational impact of the surface-level pain on the company.</p>
+                        <p class="mt-2 text-sm text-slate-400 italic">"We face potential fines and risk losing key tenants."</p>
+                    </div>
+                    <div class="bg-slate-100 p-4 rounded-lg">
+                        <h4 class="text-xl font-bold text-pink-500 mb-2">3. Personal Pain</h4>
+                        <p class="text-slate-600">How the business pain personally affects the key buyers. This is the most powerful motivator.</p>
+                        <p class="mt-2 text-sm text-slate-400 italic">"My promotion is tied to solving this compliance issue."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
+                <h3 class="text-2xl font-bold text-center mb-6 text-teal-600">The 8 Steps to Conceptual Selling Success</h3>
+                <div id="accordion-container-conceptual" class="max-w-3xl mx-auto space-y-3">
+                </div>
+            </div>
+        </section>
+
+        <section id="day2" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-orange-500">Day 2: The Art of the Consultant - The Sandler Method</h2>
+            <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
+                <p class="text-slate-500 mb-8 max-w-4xl mx-auto text-center">The Sandler "Submarine" is a 7-step process for structuring the sales conversation. It transforms the interaction from a pitch into a mutual exploration, putting the seller in the role of a trusted consultant. Each step must be "sealed" before moving to the next, ensuring a thorough and qualification-focused process.</p>
+                <div class="max-w-2xl mx-auto">
+                    <div id="stepper-container-sandler">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="roleplay" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-orange-500">Workshop Activities: Role-Play Scenarios</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2 text-teal-600">Scenario 1: The Sustainable Resort</h3>
+                    <p class="text-slate-600"><strong class="text-slate-800">Company:</strong> Aplaya Del Sol Resort & Spa, Palawan</p>
+                    <p class="text-slate-600 mt-2"><strong class="text-slate-800">Situation:</strong> Expanding with 100 new villas. Their current water system is at capacity and their septic system is non-compliant for the new load, threatening a nearby marine sanctuary.</p>
+                    <p class="text-slate-800 mt-4 font-bold">Concept to Sell: "Sustainable Luxury"</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2 text-teal-600">Scenario 2: The Government PPP</h3>
+                    <p class="text-slate-600"><strong class="text-slate-800">Company:</strong> Municipal Government of Santa Cruz, Bulacan</p>
+                    <p class="text-slate-600 mt-2"><strong class="text-slate-800">Situation:</strong> A Public-Private Partnership to build the town's first independent water facility. The project is key to the mayor's re-election campaign and has a tight 18-month deadline.</p>
+                    <p class="text-slate-800 mt-4 font-bold">Concept to Sell: "Political Victory & Public Trust"</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2 text-teal-600">Scenario 3: The At-Risk Industrial Park</h3>
+                    <p class="text-slate-600"><strong class="text-slate-800">Company:</strong> Visayas Technopark Inc., Cebu</p>
+                    <p class="text-slate-600 mt-2"><strong class="text-slate-800">Situation:</strong> An aging wastewater facility is failing to meet new standards. Their two largest multinational tenants are threatening to leave if compliance isn't guaranteed, risking major revenue loss.</p>
+                    <p class="text-slate-800 mt-4 font-bold">Concept to Sell: "Business Continuity & Tenant Retention"</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="revalida" class="mb-16 text-center">
+            <h2 class="text-3xl font-bold mb-4 text-orange-500">Final Output: Case Presentation & Revalida</h2>
+             <p class="text-slate-600 text-lg max-w-3xl mx-auto mb-8">Use the following structure to prepare your final case presentation based on your role-play activity. This outline integrates all the methodologies covered in the workshop.</p>
+            <div class="bg-white p-8 rounded-lg shadow-lg border border-slate-200 text-left max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold mb-6 text-teal-600 border-b pb-2">Revalida Presentation Outline</h3>
+                <div class="space-y-4">
+                    <p><strong class="text-slate-800">1. Executive Summary:</strong> The situation, the proposed concept, the solution, and the expected outcome.</p>
+                    <p><strong class="text-slate-800">2. Strategic Selling Analysis (Blue Sheet):</strong> Single Sales Objective, Buying Influences (Economic, User, Technical, Coach), Red Flags & Strengths.</p>
+                    <p><strong class="text-slate-800">3. Conceptual Selling Framework (The "Why"):</strong> Uncovering the three levels of pain and defining the core concept.</p>
+                    <p><strong class="text-slate-800">4. The Sandler Method in Action:</strong> Detail your Upfront Contract, Pain Funnel questions, and qualification of Budget and Decision Process.</p>
+                    <p><strong class="text-slate-800">5. The Pitch & Next Steps:</strong> Frame your personalized pitch and define the clear, mutually agreed-upon next step.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="coaching" class="mb-16 text-center">
+            <h2 class="text-3xl font-bold mb-4 text-orange-500">Monthly Coaching & Reinforcement</h2>
+             <p class="text-slate-600 text-lg max-w-3xl mx-auto mb-8">To ensure these methodologies are successfully implemented, we offer a 3-month coaching program. Each month, we will tackle a real-world challenge in a group callback session, providing a forum for discussion, strategy, and validation.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2 text-teal-600">Month 1: The Live Case Deep Dive</h3>
+                    <p class="text-slate-600"><strong class="text-slate-800">Objective:</strong> Apply the full consultative framework to a live, active sales opportunity from your pipeline.</p>
+                    <p class="text-slate-600 mt-2"><strong class="text-slate-800">Task:</strong> Select one of your active deals and complete the full Revalida Presentation Outline for it.</p>
+                    <p class="text-slate-600 mt-2"><strong class="text-slate-800">Validation:</strong> Present your analysis during the callback for group discussion, strategy brainstorming, and feedback.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2 text-teal-600">Month 2: Overcoming Objections</h3>
+                    <p class="text-slate-600"><strong class="text-slate-800">Objective:</strong> Master the art of identifying and neutralizing objections and red flags using the Sandler method.</p>
+                    <p class="text-slate-600 mt-2"><strong class="text-slate-800">Task:</strong> Identify the top 3 objections you are currently facing and prepare a strategy for each using Sandler techniques.</p>
+                    <p class="text-slate-600 mt-2"><strong class="text-slate-800">Validation:</strong> Role-play these difficult conversations in the callback session to receive live feedback and coaching.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2 text-teal-600">Month 3: Advanced Conceptual Pitching</h3>
+                    <p class="text-slate-600"><strong class="text-slate-800">Objective:</strong> Refine your ability to pitch the "Concept" to different buying influences, especially the Economic Buyer.</p>
+                    <p class="text-slate-600 mt-2"><strong class="text-slate-800">Task:</strong> Develop a short, powerful conceptual pitch for your live case, with versions tailored for Economic, Technical, and User Buyers.</p>
+                    <p class="text-slate-600 mt-2"><strong class="text-slate-800">Validation:</strong> Deliver your pitches during the callback for group evaluation on how effectively you connected the solution to each buyer's unique motivations.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="text-center">
+            <h2 class="text-3xl font-bold mb-4 text-orange-500">Knowledge Check</h2>
+            <p class="text-slate-600 text-lg max-w-3xl mx-auto mb-8">Test your understanding of the key concepts from the masterclass.</p>
+            <div class="bg-white p-8 rounded-lg shadow-lg border border-slate-200 text-left max-w-4xl mx-auto">
+                <div id="name-entry-container" class="mb-6">
+                    <label for="participant-name" class="block font-bold text-lg text-slate-800 mb-2">Enter your name to begin:</label>
+                    <input type="text" id="participant-name" placeholder="e.g., Juan dela Cruz" class="w-full p-3 border-2 border-slate-200 rounded-lg">
+                </div>
+                <div id="quiz-container"></div>
+                <div id="quiz-results" class="hidden mt-6"></div>
+                <button id="submit-quiz" class="mt-6 w-full bg-teal-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-teal-700 transition-colors" disabled>Submit Answers</button>
+            </div>
+        </section>
+
+        <section id="scoreboard" class="mt-16 text-center">
+             <h2 class="text-3xl font-bold mb-4 text-orange-500">Live Scoreboard</h2>
+             <div class="bg-white p-8 rounded-lg shadow-lg border border-slate-200 text-left max-w-4xl mx-auto">
+                <div id="scoreboard-list" class="space-y-3">
+                    <p class="text-slate-500 text-center">Scores will appear here as they are submitted...</p>
+                </div>
+             </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white p-6 text-center mt-16 border-t border-slate-200">
+        <p class="text-slate-400">A Visual Guide to Consultative Selling Excellence</p>
+    </footer>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, query, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        const conceptualSteps = [
+            { 
+                title: "1. Research Your Buyers", 
+                content: "This goes beyond a quick LinkedIn check. It means understanding the company's strategic goals, recent challenges, and the personal motivations of your contacts. For public projects, it involves studying local development plans and political priorities. True research allows you to walk into the first meeting already speaking their language.<div class='example-block'><p class='example-title'>Example:</p><p>Before meeting with a municipal government about a bulk water project, you review their Comprehensive Land Use Plan (CLUP). You discover their 10-year goal is to attract manufacturing investors. You can now frame your solution not just as 'providing water,' but as 'enabling their long-term economic development goals.'</p></div>" 
+            },
+            { 
+                title: "2. Align Objectives", 
+                content: "Every buyer has a process, and you have a sales process. This step is about merging them. Instead of pushing your next step, you co-create a path forward with the buyer. This builds trust and ensures you're both working towards the same goal, on the same timeline.<div class='example-block'><p class='example-title'>Example:</p><p>Instead of saying, 'My next step is to schedule a technical demo,' you ask, 'What specific information would your engineering team need to see before this can be presented to the Bids and Awards Committee? Let's build that evaluation plan together.'</p></div>" 
+            },
+            { 
+                title: "3. Become a Consultant", 
+                content: "A salesperson prescribes a product; a consultant diagnoses a problem. This means asking deep, insightful questions to uncover the root cause of their pain. Focus on the business consequences of their problem, not just the technical aspects. Diagnose before you prescribe.<div class='example-block'><p class='example-title'>Example:</p><p>A resort manager says they need a new wastewater plant. The consultant asks, 'Beyond the technical need, what are the business consequences if you don't upgrade? Are you facing DENR fines? Risking your eco-tourism accreditation? Could negative press affect bookings?'</p></div>" 
+            },
+            { 
+                title: "4. Listen Carefully", 
+                content: "Top performers listen more than they talk. This isn't just about hearing words; it's about understanding the emotion and intent behind them. Listen for what's *not* said. On a video call, pay attention to tone of voice and hesitation, as these often reveal the true priorities.<div class='example-block'><p class='example-title'>Example:</p><p>A project manager says the budget is 'challenging,' but their tone sounds deeply worried. This could signal that the project's success is tied to their personal performance review, making 'budget certainty' a critical, unspoken buying concept.</p></div>" 
+            },
+            { 
+                title: "5. Control the Meeting", 
+                content: "This isn't about domination; it's about direction. Use an upfront contract to set a clear agenda and objective for every meeting. This shows respect for the client's time and keeps the conversation focused on what matters most to them, preventing scope creep and wasted time.<div class='example-block'><p class='example-title'>Example:</p><p>Start with, 'My goal today is to fully understand your compliance challenges at the industrial park. We'll then briefly touch on how our solution addresses those specific issues, and we'll end by defining if it makes sense for us to prepare a preliminary proposal. How does that sound?'</p></div>" 
+            },
+            { 
+                title: "6. Personalize Your Pitch", 
+                content: "A personalized pitch isn't just adding their logo to a slide. It's structuring the entire presentation around the specific pain points and concepts you uncovered during your consultation. Every feature you present should directly solve a problem they've already told you they have.<div class='example-block'><p class='example-title'>Example:</p><p>For the eco-resort in Palawan, the pitch isn't about 'our efficient system.' It's about 'how our zero-discharge solution protects the marine sanctuary, a key pillar of the Aplaya Del Sol brand identity that attracts your high-paying guests.'</p></div>" 
+            },
+            { 
+                title: "7. Differentiate Your Solution", 
+                content: "Clearly illustrate the 'before' and 'after.' Your job is to show that the pain of staying the same is far greater than the pain of change. Quantify the negative impact of their current situation and contrast it with the positive business outcomes your solution delivers.<div class='example-block'><p class='example-title'>Example:</p><p>'Currently, your industrial park faces potential DENR fines and the loss of your top two tenants, representing 40% of your revenue. With our upgraded facility, you achieve guaranteed compliance, secure those contracts, and can market your park as a sustainable leader to attract new locators.'</p></div>" 
+            },
+            { 
+                title: "8. Move the Meeting Forward", 
+                content: "Every interaction must end with a clear, mutually agreed-upon next step. Avoid vague follow-ups. Propose a specific, logical next action that moves the sales process forward and assign it a deadline. This creates momentum and accountability.<div class='example-block'><p class='example-title'>Example:</p><p>Instead of 'Let's talk again soon,' say, 'Based on our discussion, the next logical step is for me to provide a budgetary estimate for your review. I can have that to you by Wednesday. Would you and the finance head be available for a 30-minute call next Friday to discuss it?'</p></div>" 
+            },
+        ];
+
+        const sandlerSteps = [
+            { title: "Build Rapport", content: "Establish a human connection before discussing business. Show genuine curiosity." },
+            { title: "Set Upfront Contract", content: "Define the meeting's agenda, timeline, and potential outcomes to remove pressure." },
+            { title: "Identify Pain", content: "Go beyond surface issues to uncover the deep business and personal consequences." },
+            { title: "Establish Budget", content: "Discuss investment early to ensure alignment and qualify the opportunity." },
+            { title: "Define Decision Process", content: "Map out the formal steps and key players required for approval." },
+            { title: "Fulfill Your Promise", content: "Present your solution as a direct confirmation of everything already discussed and agreed upon." },
+            { title: "Post-Sale Follow Up", content: "Reinforce the decision to prevent buyer's remorse and ensure a smooth handover." },
+        ];
+
+        const allQuizQuestions = [
+            {
+                question: "In Conceptual Selling, what is the most powerful motivator for a buyer?",
+                options: ["Surface-Level Pain", "Business Pain", "Personal Pain", "Product Features"],
+                answer: "Personal Pain",
+                feedback: "Correct! Personal Pain, such as career advancement or avoiding personal stress, is the strongest driver behind a purchase decision."
+            },
+            {
+                question: "According to the Sandler Method, what is the primary purpose of an 'Upfront Contract'?",
+                options: ["To legally bind the customer", "To remove pressure and set clear expectations", "To get the price approved early", "To schedule the next meeting"],
+                answer: "To remove pressure and set clear expectations",
+                feedback: "Exactly. The Upfront Contract is a verbal agreement that creates a low-pressure environment by defining the meeting's agenda and outcomes."
+            },
+            {
+                question: "Which of the following is a 'Red Flag' in Strategic Selling?",
+                options: ["You have a strong internal coach", "The client has a defined budget", "You don't have access to the Economic Buyer", "The client understands your value proposition"],
+                answer: "You don't have access to the Economic Buyer",
+                feedback: "That's right. Not having access to the person who controls the funds is a major Red Flag that can stall or kill a deal."
+            },
+            {
+                question: "What is the primary goal of the 'Identify Pain' step in the Sandler Submarine?",
+                options: ["To list the technical problems", "To understand the business and personal consequences of the problem", "To show the customer how your product works", "To discuss the budget"],
+                answer: "To understand the business and personal consequences of the problem",
+                feedback: "Correct. The goal is to dig deep using the Pain Funnel to find the root cause and the real impact on the business and the individual."
+            },
+            {
+                question: "When personalizing a pitch in Conceptual Selling, what should be the main focus?",
+                options: ["Your company's history", "A long list of product features", "The client's specific pain points and the 'Concept' they are buying", "Your competitor's weaknesses"],
+                answer: "The client's specific pain points and the 'Concept' they are buying",
+                feedback: "Perfect. The pitch should be a direct response to the problems and motivations you uncovered, framed around the concept they care about (e.g., 'Business Continuity')."
+            },
+            {
+                question: "In Strategic Selling, the 'User Buyer' is primarily concerned with:",
+                options: ["The financial ROI of the purchase", "The day-to-day impact on their job", "Whether the solution meets technical specifications", "Helping you navigate their organization"],
+                answer: "The day-to-day impact on their job",
+                feedback: "Correct. The User Buyer is focused on how the solution will affect their daily work and processes."
+            },
+            {
+                question: "The Sandler 'Pain Funnel' is a technique used to:",
+                options: ["Calculate the budget for a project", "Identify all the decision-makers", "Move from surface-level problems to the root cause", "Create the final proposal"],
+                answer: "Move from surface-level problems to the root cause",
+                feedback: "Exactly. The Pain Funnel uses a series of questions to peel back the layers of a problem to find the real, compelling reason for a client to act."
+            },
+            {
+                question: "What does 'selling the concept' of 'Political Victory' mean in a government project scenario?",
+                options: ["Selling the cheapest possible solution", "Focusing only on the technical engineering details", "Highlighting how the project's success will boost the mayor's reputation and legacy", "Ignoring the project timeline"],
+                answer: "Highlighting how the project's success will boost the mayor's reputation and legacy",
+                feedback: "That's right. It connects your solution to the personal and political win for the key decision-maker, which is a powerful motivator."
+            },
+            {
+                question: "Which step of the Sandler Submarine is focused on preventing buyer's remorse?",
+                options: ["Build Rapport", "Fulfill Your Promise", "Post-Sale Follow Up", "Establish Budget"],
+                answer: "Post-Sale Follow Up",
+                feedback: "Correct. A strong post-sale follow-up reinforces the client's decision and ensures a smooth transition, solidifying the long-term relationship."
+            },
+            {
+                question: "A 'Win-Result' in Strategic Selling is best described as:",
+                options: ["A signed contract", "A positive outcome for the salesperson", "A tangible, measurable benefit for the buyer", "A successful product demonstration"],
+                answer: "A tangible, measurable benefit for the buyer",
+                feedback: "Perfect. A Win-Result is a specific, positive outcome that the buyer achieves by using your solution, fulfilling their personal and business objectives."
+            },
+            {
+                question: "What is the main risk of not properly qualifying the budget early in the sales process?",
+                options: ["The client might ask for a discount", "You might waste time developing a proposal for a client who can't afford it", "The project might be delayed", "You won't know who the User Buyer is"],
+                answer: "You might waste time developing a proposal for a client who can't afford it",
+                feedback: "Exactly. The Sandler method emphasizes early budget qualification to ensure you're investing your time and resources on viable opportunities."
+            },
+            {
+                question: "In the 'At-Risk Industrial Park' scenario, what is the core 'Business Pain'?",
+                options: ["The wastewater facility is old", "The risk of losing their largest tenants and major revenue", "The park manager is stressed", "The discharge standards are too strict"],
+                answer: "The risk of losing their largest tenants and major revenue",
+                feedback: "Correct. The aging facility (Surface Pain) leads to the tangible business risk of losing significant revenue, which is the core Business Pain."
+            },
+            {
+                question: "The 'Coach' in Strategic Selling is someone who:",
+                options: ["Always has the final say on the budget", "Wants to see you succeed and provides inside information", "Evaluates the technical aspects of your solution", "Is the primary user of your product"],
+                answer: "Wants to see you succeed and provides inside information",
+                feedback: "That's right. A Coach is your internal champion who guides you through their organization's political landscape."
+            },
+            {
+                question: "What is the final step in the 8 Steps to Conceptual Selling Success?",
+                options: ["Personalize Your Pitch", "Differentiate Your Solution", "Move the Meeting Forward", "Listen Carefully"],
+                answer: "Move the Meeting Forward",
+                feedback: "Correct. Every meeting must end with a clear, mutually agreed-upon next step to maintain momentum and control of the sales process."
+            },
+            {
+                question: "The Sandler principle of 'Always Be Consulting' means:",
+                options: ["Always be closing the deal", "Giving away free technical advice to anyone who asks", "Focusing on diagnosing problems and building trust rather than pushing a product", "Only talking to the highest-level executives"],
+                answer: "Focusing on diagnosing problems and building trust rather than pushing a product",
+                feedback: "Perfect. It's a mindset shift from being a vendor to being a trusted advisor who helps clients solve their problems."
+            }
+        ];
+        
+        let displayedQuestions = [];
+
+        let db;
+
+        async function initializeFirebase() {
+            try {
+                const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+                const app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                const auth = getAuth(app);
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+                listenForScores();
+            } catch (error) {
+                console.error("Firebase initialization failed:", error);
+            }
+        }
+
+        function createAccordion(containerId, items) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            items.forEach(item => {
+                const itemEl = document.createElement('div');
+                itemEl.className = 'bg-white border border-slate-200 rounded-lg';
+                itemEl.innerHTML = `
+                    <button class="accordion-button w-full text-left p-4 flex justify-between items-center hover:bg-slate-100">
+                        <span class="font-semibold text-slate-700">${item.title}</span>
+                        <svg class="plus-icon w-5 h-5 text-slate-500 transform transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                    </button>
+                    <div class="accordion-content px-4">
+                        <p class="text-slate-600 pb-4">${item.content}</p>
+                    </div>
+                `;
+                container.appendChild(itemEl);
+            });
+            container.addEventListener('click', (e) => {
+                const button = e.target.closest('.accordion-button');
+                if (!button) return;
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('.plus-icon');
+                const isOpen = content.style.maxHeight;
+                if (isOpen) {
+                    content.style.maxHeight = null;
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    icon.style.transform = 'rotate(45deg)';
+                }
+            });
+        }
+
+        function createStepper(containerId, items) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            const colors = ['purple', 'pink', 'orange', 'teal', 'red', 'green', 'sky'];
+            items.forEach((item, index) => {
+                const itemEl = document.createElement('div');
+                itemEl.className = 'flow-step';
+                itemEl.innerHTML = `
+                    <div class="flow-icon bg-${colors[index % colors.length]}-500">${index + 1}</div>
+                    <h4 class="text-xl font-bold text-${colors[index % colors.length]}-600">${item.title}</h4>
+                    <p class="text-slate-600">${item.content}</p>
+                `;
+                container.appendChild(itemEl);
+            });
+        }
+
+        function renderQuiz() {
+            const quizContainer = document.getElementById('quiz-container');
+            quizContainer.innerHTML = ''; // Clear previous questions
+            
+            // Shuffle and select 5 questions
+            const shuffled = [...allQuizQuestions].sort(() => 0.5 - Math.random());
+            displayedQuestions = shuffled.slice(0, 5);
+
+            displayedQuestions.forEach((q, index) => {
+                const questionEl = document.createElement('div');
+                questionEl.className = 'mb-6';
+                let optionsHtml = '';
+                q.options.forEach(option => {
+                    // Use a unique ID for each option based on its content and question index
+                    const optionId = `q${index}_${option.replace(/\s+/g, '')}`;
+                    optionsHtml += `
+                        <div class="quiz-option mt-2">
+                            <input type="radio" id="${optionId}" name="q${index}" value="${option}" class="hidden">
+                            <label for="${optionId}" class="block p-3 border-2 border-slate-200 rounded-lg cursor-pointer transition-colors">${option}</label>
+                        </div>
+                    `;
+                });
+                questionEl.innerHTML = `
+                    <p class="font-bold text-lg text-slate-800">${index + 1}. ${q.question}</p>
+                    <div class="mt-2">${optionsHtml}</div>
+                `;
+                quizContainer.appendChild(questionEl);
+            });
+        }
+
+
+        async function submitQuiz() {
+            const participantNameInput = document.getElementById('participant-name');
+            const participantName = participantNameInput.value.trim();
+            if (!participantName) {
+                alert("Please enter your name to submit your score.");
+                return;
+            }
+
+            let score = 0;
+            const resultsContainer = document.getElementById('quiz-results');
+            resultsContainer.innerHTML = '';
+            resultsContainer.classList.remove('hidden');
+
+            displayedQuestions.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="q${index}"]:checked`);
+                const resultEl = document.createElement('div');
+                resultEl.className = 'p-4 rounded-lg mb-4';
+
+                if (selected && selected.value === q.answer) {
+                    score++;
+                    resultEl.classList.add('bg-green-100', 'border', 'border-green-300');
+                    resultEl.innerHTML = `<p class="font-bold text-green-800">Question ${index + 1}: Correct!</p><p class="text-green-700">${q.feedback}</p>`;
+                } else {
+                    resultEl.classList.add('bg-red-100', 'border', 'border-red-300');
+                    const correctAnswerText = q.answer;
+                    resultEl.innerHTML = `<p class="font-bold text-red-800">Question ${index + 1}: Incorrect.</p><p class="text-red-700">The correct answer is: <strong>${correctAnswerText}</strong>. ${q.feedback}</p>`;
+                }
+                resultsContainer.appendChild(resultEl);
+            });
+
+            const scoreEl = document.createElement('div');
+            scoreEl.className = 'text-center text-2xl font-bold p-4 bg-teal-100 rounded-lg';
+            scoreEl.innerHTML = `Your Score: <span class="text-teal-700">${score} out of ${displayedQuestions.length}</span>`;
+            resultsContainer.prepend(scoreEl);
+            
+            const submitButton = document.getElementById('submit-quiz');
+            submitButton.style.display = 'none';
+            participantNameInput.disabled = true;
+
+            try {
+                const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+                const scoresCollection = collection(db, `/artifacts/${appId}/public/data/quizScores`);
+                await addDoc(scoresCollection, {
+                    name: participantName,
+                    score: score,
+                    total: displayedQuestions.length,
+                    timestamp: serverTimestamp()
+                });
+            } catch (error) {
+                console.error("Error saving score to Firestore:", error);
+            }
+        }
+
+        function listenForScores() {
+            const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+            const scoresCollection = collection(db, `/artifacts/${appId}/public/data/quizScores`);
+            const q = query(scoresCollection);
+
+            onSnapshot(q, (snapshot) => {
+                const scores = [];
+                snapshot.forEach(doc => {
+                    scores.push(doc.data());
+                });
+
+                scores.sort((a, b) => b.score - a.score || a.timestamp - b.timestamp);
+
+                const scoreboardList = document.getElementById('scoreboard-list');
+                scoreboardList.innerHTML = '';
+
+                if (scores.length === 0) {
+                     scoreboardList.innerHTML = '<p class="text-slate-500 text-center">Scores will appear here as they are submitted...</p>';
+                     return;
+                }
+                
+                const header = document.createElement('div');
+                header.className = 'grid grid-cols-3 gap-4 font-bold text-slate-800 border-b-2 border-slate-200 pb-2 mb-2';
+                header.innerHTML = `<span>Rank</span><span>Name</span><span class="text-right">Score</span>`;
+                scoreboardList.appendChild(header);
+
+                scores.forEach((entry, index) => {
+                    const scoreEl = document.createElement('div');
+                    scoreEl.className = 'grid grid-cols-3 gap-4 p-2 rounded-lg';
+                    if(index < 3) {
+                        scoreEl.classList.add('font-bold');
+                    }
+                     if(index === 0) scoreEl.classList.add('bg-amber-100');
+                     if(index === 1) scoreEl.classList.add('bg-slate-200');
+                     if(index === 2) scoreEl.classList.add('bg-orange-100');
+
+
+                    scoreEl.innerHTML = `
+                        <span>#${index + 1}</span>
+                        <span>${entry.name}</span>
+                        <span class="text-right">${entry.score} / ${entry.total}</span>
+                    `;
+                    scoreboardList.appendChild(scoreEl);
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeFirebase();
+            createAccordion('accordion-container-conceptual', conceptualSteps);
+            createStepper('stepper-container-sandler', sandlerSteps);
+            renderQuiz();
+
+            const nameInput = document.getElementById('participant-name');
+            const submitButton = document.getElementById('submit-quiz');
+            nameInput.addEventListener('input', () => {
+                if (nameInput.value.trim().length > 0) {
+                    submitButton.disabled = false;
+                } else {
+                    submitButton.disabled = true;
+                }
+            });
+
+            submitButton.addEventListener('click', submitQuiz);
+        });
+    </script>
+
+</body>
+</html>
